@@ -19,8 +19,8 @@
 - (void)setNewName:(NSString *)newName;
 - (void)setNewState:(NSString *)newState;
 
--(NSString *) getName;
--(NSString *) getState;
+-(NSString *) getNewName;
+-(NSString *) getNewState;
 
 
 @end

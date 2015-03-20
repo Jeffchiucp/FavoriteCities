@@ -27,7 +27,11 @@
     [self.cities addObject:[[City alloc] initWithCityName:@"New York" cityState:@"NY" andCityImage:[UIImage imageNamed:@"newyork"]]];
     [self.cities addObject:[[City alloc] initWithCityName:@"Chicago" cityState:@"IL" andCityImage:[UIImage imageNamed:@"chicago"]]];
     [self.cities addObject:[[City alloc] initWithCityName:@"San Francisco" cityState:@"CA" andCityImage:[UIImage imageNamed:@"sanfran"]]];
+}
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.tableView reloadData];
 }
 
 #pragma mark - UITableViewDataSource
@@ -40,8 +44,8 @@
     tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
     City *cities = [self.cities objectAtIndex:indexPath.row];
-    cell.textLabel.text = [cities getName];
-    cell.detailTextLabel.text = [cities getName];
+    cell.textLabel.text = [cities getNewName];
+    cell.detailTextLabel.text = [cities getNewState];
     cell.imageView.image = cities.cityImage;
 
     return cell;

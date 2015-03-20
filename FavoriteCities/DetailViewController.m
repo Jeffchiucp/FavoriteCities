@@ -26,9 +26,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.cityNameLabel.text = [self.selected getName];
-    self.cityStateLabel.text = [self.selected getState];
+    self.cityNameLabel.text = [self.selected getNewName];
+    self.cityStateLabel.text = [self.selected getNewState];
     self.cityImageView.image = self.selected.cityImage;
+
+    self.isEditPressed = NO;
 }
 
 #pragma mark - UITextField
@@ -46,6 +48,10 @@
         self.wikiViewConroller = vc.viewControllers[0];
         self.wikiViewConroller.urlString = [NSString stringWithFormat:@"http://en.wikipedia.org/wiki/%@%@", self.selected.cityName, self.selected.cityState];
     }
+}
+
+-(IBAction)prepareForUnwind:(UIStoryboardSegue *)segue
+{
 }
 
 #pragma mark - Actions

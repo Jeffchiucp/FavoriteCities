@@ -20,6 +20,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.webView.delegate = self;
+    
+    if ([self.urlString containsString:@" "])
+    {
+        self.urlString = [self.urlString stringByReplacingOccurrencesOfString:@" " withString:@"_"];
+    }
      NSURL *url = [NSURL URLWithString:self.urlString];
      NSURLRequest *request = [NSURLRequest requestWithURL:url];
      [_webView loadRequest:request];
