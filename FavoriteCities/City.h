@@ -19,8 +19,4 @@
 - (void)setNewName:(NSString *)newName;
 - (void)setNewState:(NSString *)newState;
 
--(NSString *) getNewName;
--(NSString *) getNewState;
-
-
 @end

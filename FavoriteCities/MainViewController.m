@@ -44,8 +44,8 @@
     tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
     City *cities = [self.cities objectAtIndex:indexPath.row];
-    cell.textLabel.text = [cities getNewName];
-    cell.detailTextLabel.text = [cities getNewState];
+    cell.textLabel.text = cities.cityName;
+    cell.detailTextLabel.text = cities.cityState;
     cell.imageView.image = cities.cityImage;
 
     return cell;

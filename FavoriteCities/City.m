@@ -27,12 +27,4 @@
     self.cityState = newState;
 }
 
--(NSString *)getNewName {
-    return self.cityName;
-}
-
--(NSString *)getNewState {
-    return self.cityState;
-}
-
 @end

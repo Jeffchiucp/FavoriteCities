@@ -26,8 +26,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.cityNameLabel.text = [self.selected getNewName];
-    self.cityStateLabel.text = [self.selected getNewState];
+    self.cityNameLabel.text = self.selected.cityName;
+    self.cityStateLabel.text = self.selected.cityState;
     self.cityImageView.image = self.selected.cityImage;
 
     self.isEditPressed = NO;
