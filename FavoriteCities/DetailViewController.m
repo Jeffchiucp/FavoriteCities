@@ -31,6 +31,10 @@
     self.cityImageView.image = self.selected.cityImage;
 
     self.isEditPressed = NO;
+
+
+    //Changes after turn in. Just improving visual elements not finishing steps required
+    self.changeTitle.layer.cornerRadius = 3;
 }
 
 #pragma mark - UITextField
@@ -79,7 +83,6 @@
 
 }
 
-#pragma mark - Actions
 - (IBAction)onChangeTitleTapped:(id)sender {
     [self.delegate changeTitle:self.selected.cityName];
 }
