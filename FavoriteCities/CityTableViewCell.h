@@ -8,13 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@protocol CityTableViewCellDelegate <NSObject>
-
-
-
-@end
-
 @interface CityTableViewCell : UITableViewCell
-@property (nonatomic, assign) id <CityTableViewCellDelegate> delegate;
+@property (nonatomic, weak) IBOutlet UILabel *cityName;
+@property (nonatomic, weak) IBOutlet UILabel *cityState;
+@property (nonatomic, weak) IBOutlet UIImageView *cityImage;
+
 
 @end

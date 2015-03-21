@@ -8,6 +8,7 @@
 
 #import "MainViewController.h"
 #import "City.h"
+#import "CityTableViewCell.h"
 #import "DetailViewController.h"
 
 @interface MainViewController ()<UITableViewDataSource, UITableViewDelegate, DetailViewControllerDelegate>
@@ -42,11 +43,11 @@
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
+    CityTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CityCell"];
     City *cities = [self.cities objectAtIndex:indexPath.row];
-    cell.textLabel.text = cities.cityName;
-    cell.detailTextLabel.text = cities.cityState;
-    cell.imageView.image = cities.cityImage;
+    cell.cityName.text = cities.cityName;
+    cell.cityState.text = cities.cityState;
+    cell.cityImage.image = cities.cityImage;
 
     return cell;
 }
